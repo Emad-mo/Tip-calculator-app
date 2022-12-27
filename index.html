@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="tipCal.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  </style>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style> -->
+</head>
+
+<body>
+  <img src="./images/logo.svg" alt="" class="img">
+  <div class="continar">
+    <div class="left">
+      <h5 class="tit">Bill</h5>
+      <i class="fa fa-dollar"></i>
+      <input type="text" placeholder="0" class="billin" id="bill">
+
+      <h5>Select Tip %</h5>
+      <ul class="list" id="lists">
+        <li class="per" data-value="5">5%</li>
+        <li class="per" data-value="10">10%</li>
+        <li class="per" data-value="15">15%</li>
+        <li class="per" data-value="25">25%</li>
+        <li class="per" data-value="50">50%</li>
+
+        <input type="text" name="Custom" class="Custem" placeholder="Custom " />
+      </ul>
+      <div class="divs">
+        <h5 class="tit">Number of People</h5>
+        <h5 class="cant">Can't be zero ro string </h5>
+      </div>
+      <i class='fa fa-user'></i>
+      <input type="text" placeholder="0" class="billin" id="numberofppl">
+
+
+    </div>
+    <div class="right">
+      <div class="ditails">
+        <div class="bbo">
+          <h5> Tip Amount </h5>
+          <p> /person </p>
+          <h5>Total</h5>
+          <p>/person</p>
+        </div>
+        <div class="num">
+          <h1 id="Tip">$0.00</h1>
+          <h1 id="total">$0.00</h1>
+        </div>
+      </div>
+      <button id="Reset">Reset</button>
+    </div>
+  </div>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="tipCal.js"></script>
+</body>
+
+</html>
