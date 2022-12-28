@@ -20,7 +20,7 @@ body {
     margin-top: 150px;
     max-width: 800px;
     /* height: 1000px; */
-    position: relative;
+    /* position: relative; */
     /* left: 300px; */
     /* align-items: center; */
     /* align-content: center; */
@@ -113,10 +113,10 @@ body {
 }
 
 .left>i {
-    position: absolute;
+    /* position: absolute; */
     padding-left: 10px;
     padding-top: 10px;
-    min-width: 500px;
+    width: 100%;
     font-size: 13px;
     color: hsl(185, 41%, 84%)
 }
@@ -292,10 +292,12 @@ ul li.active {
     }
 
     .left>i {
-        position: absolute;
+
         padding-left: 10px;
         padding-top: 10px;
-        width: auto;
+        max-width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
         font-size: 15px;
         color: hsl(185, 41%, 84%)
     }
