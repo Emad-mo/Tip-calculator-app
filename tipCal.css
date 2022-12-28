@@ -20,7 +20,7 @@ body {
     margin-top: 150px;
     max-width: 800px;
     /* height: 1000px; */
-    position: relative;
+    /* position: relative; */
     /* left: 300px; */
     /* align-items: center; */
     /* align-content: center; */
@@ -113,10 +113,10 @@ body {
 }
 
 .left>i {
-    position: absolute;
+    /* position: absolute; */
     padding-left: 10px;
     padding-top: 10px;
-    min-width: 500px;
+    width: 100%;
     font-size: 13px;
     color: hsl(185, 41%, 84%)
 }
@@ -239,6 +239,7 @@ ul li.active {
         background-color: hsl(0, 0%, 100%);
         margin-top: 150px;
         width: auto;
+        height: auto;
         /* height: 1000px; */
         /* left: 300px; */
         /* align-items: center; */
@@ -258,7 +259,8 @@ ul li.active {
         margin-right: auto;
         border-radius: 20px;
         text-align: center;
-        margin-top: 0px;
+        margin-bottom: 2px;
+        margin-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -267,7 +269,7 @@ ul li.active {
         display: flex;
         flex-wrap: wrap;
         padding-top: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 0px;
         padding-left: 30px;
         padding-right: 20px;
         margin-left: auto;
@@ -277,8 +279,8 @@ ul li.active {
 
     .list {
         display: grid;
-        width: 120%;
-        height: 100px;
+        width: auto;
+        height: auto;
         grid-template-rows: 50px 50px;
         grid-template-columns: 120px 120px;
         list-style: none;
@@ -292,16 +294,46 @@ ul li.active {
     }
 
     .left>i {
-        position: absolute;
+
         padding-left: 10px;
-        padding-top: 10px;
-        width: auto;
+        padding-top: 0px;
+        max-width: auto;
+        margin-left: 0px;
+        margin-right: 0px;
         font-size: 15px;
         color: hsl(185, 41%, 84%)
     }
 
     .numberofppl {
-        margin-bottom: 0px;
+        margin-bottom: auto;
+        margin-top: auto;
         padding: 0px;
+    }
+
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        margin-bottom: -50px;
+        margin-top: 70px;
+
+    }
+
+    #Reset {
+        border: inherit;
+        background-color: hsl(172, 67%, 45%);
+        color: hsl(183, 100%, 15%);
+        width: 200px;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        cursor: pointer;
+        padding-bottom: -10px;
+        margin-top: auto;
+        margin-bottom: 10px;
+
     }
 }

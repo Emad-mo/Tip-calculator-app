@@ -122,9 +122,9 @@ Resetit()
 Allfuncs = function () {
 
     bill.oninput = function () {
-        if (!isNaN(+bill.value)) {
+        if (!isNaN(+bill.value) && !isNaN(+numberofppl.value)) {
             list.forEach(el => {
-                if (bill.value != '' && (el.classList.contains("active"))) {
+                if (bill.value != '' && (el.classList.contains("active")) && numberofppl.value != "") {
                     splitAmount = (el.dataset.value / 100) * bill.value
                     tipAmount = splitAmount / numberofppl.value
                     let tipAmountString = tipAmount.toString()
