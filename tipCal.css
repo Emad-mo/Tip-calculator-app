@@ -295,10 +295,16 @@ ul li.active {
 
     .left>i {
 
+<<<<<<< HEAD
 
         padding-left: 10px;
         padding-top: 0px;
         max-width: auto;
+=======
+        padding-left: 10px;
+        padding-top: 10px;
+        max-width: 100%;
+>>>>>>> e4ecbb346a96457d1bf8bca7e1f6093dc58810c0
         margin-left: 0px;
         margin-right: 0px;
         font-size: 15px;
