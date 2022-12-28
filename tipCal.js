@@ -21,7 +21,7 @@ list.forEach((el) => {
         e.currentTarget.classList.add("active")
         if (el.classList.contains("active")) {
             splitAmount = (el.dataset.value / 100) * bill.value
-            console.log(splitAmount)
+            console.log()
         }
 
     })
@@ -32,18 +32,30 @@ Custemcal = function () {
 
         if (isNaN(+Custem.value)) {
             Custem.style.cssText = `outline-color: red;`
+
         }
         else {
+            if (numberofppl.value != "" && bill.value != "" && !isNaN(+bill.value) && !isNaN(+numberofppl.value)) {
+                splitAmount = (Custem.value / 100) * bill.value
+                tipAmount = splitAmount / numberofppl.value
+                let tipAmountString = tipAmount.toString()
+                Tip.textContent = `$${tipAmountString.slice(0, (tipAmountString.indexOf(".")) + 3)}`
+                totalAmount = (bill.value / numberofppl.value) + tipAmount
+                total.textContent = `$${totalAmount.toFixed(2)}`
+                console.log(`${numberofppl.value}== number of ppl --- ${splitAmount} == split amount`)
+            }
             splitAmount = (Custem.value / 100) * bill.value
             console.log(splitAmount)
             Custem.style.cssText = `outline-color: hsl(172, 67%, 45%);`
         }
+
     }
     Custem.onfocus = function () {
         list.forEach((el) => {
             el.classList.remove("active")
             splitAmount = 0
             Custem.style.cssText = `outline-color: hsl(172, 67%, 45%);`
+
 
         })
 
@@ -64,15 +76,18 @@ mainF = function () {
             numberofppl.style.cssText = `outline-color: hsl(172, 67%, 45%);`
             cant.style.display = "none"
             if (numberofppl.value != "" && bill.value != "") {
-                if (!isNaN(+bill.value)) {
-                    tipAmount = splitAmount / numberofppl.value
-                    let tipAmountString = tipAmount.toString()
-                    Tip.textContent = `$${tipAmountString.slice(0, (tipAmountString.indexOf(".")) + 3)}`
-                    totalAmount = (bill.value / numberofppl.value) + tipAmount
-                    total.textContent = `$${totalAmount.toFixed(2)}`
-                    console.log(totalAmount)
-                    console.log(total)
-                }
+                list.forEach((el) => {
+                    if (!isNaN(+bill.value) && (el.classList.contains("active") || Custem.value != "")) {
+                        tipAmount = splitAmount / numberofppl.value
+                        let tipAmountString = tipAmount.toString()
+                        Tip.textContent = `$${tipAmountString.slice(0, (tipAmountString.indexOf(".")) + 3)}`
+                        totalAmount = (bill.value / numberofppl.value) + tipAmount
+                        total.textContent = `$${totalAmount.toFixed(2)}`
+                        console.log(totalAmount)
+                        console.log(total)
+                    }
+                })
+
 
             }
 
@@ -104,3 +119,48 @@ Resetit = function () {
     }
 }
 Resetit()
+Allfuncs = function () {
+
+    bill.oninput = function () {
+        if (!isNaN(+bill.value)) {
+            list.forEach(el => {
+                if (bill.value != '' && (el.classList.contains("active"))) {
+                    splitAmount = (el.dataset.value / 100) * bill.value
+                    tipAmount = splitAmount / numberofppl.value
+                    let tipAmountString = tipAmount.toString()
+                    Tip.textContent = `$${tipAmountString.slice(0, (tipAmountString.indexOf(".")) + 3)}`
+                    totalAmount = (bill.value / numberofppl.value) + tipAmount
+                    total.textContent = `$${totalAmount.toFixed(2)}`
+                    console.log(`${numberofppl.value}== number of ppl --- ${splitAmount} == split amount`)
+
+                }
+
+            })
+
+        }
+
+        list.forEach((el) => {
+            el.addEventListener("click", () => {
+                if (numberofppl.value != '' && bill.value != '' && (el.classList.contains("active")) && !isNaN(+bill.value) && !isNaN(numberofppl.value)) {
+                    splitAmount = (el.dataset.value / 100) * bill.value
+                    tipAmount = splitAmount / numberofppl.value
+                    let tipAmountString = tipAmount.toString()
+                    Tip.textContent = `$${tipAmountString.slice(0, (tipAmountString.indexOf(".")) + 3)}`
+                    totalAmount = (bill.value / numberofppl.value) + tipAmount
+                    total.textContent = `$${totalAmount.toFixed(2)}`
+                    console.log(`${numberofppl.value}== number of ppl --- ${splitAmount} == split amount`)
+                }
+
+                // e.currentTarget.classList.add("active")
+                // if (el.classList.contains("active")) {
+                //     splitAmount = (el.dataset.value / 100) * bill.value
+                //     console.log()
+                // }
+
+            })
+
+        })
+    }
+
+}
+Allfuncs()
