@@ -259,7 +259,7 @@ ul li.active {
         margin-right: auto;
         border-radius: 20px;
         text-align: center;
-        margin-bottom: 2px;
+        margin-bottom: 10px;
         margin-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
@@ -294,6 +294,7 @@ ul li.active {
     }
 
     .left>i {
+
 
         padding-left: 10px;
         padding-top: 0px;
